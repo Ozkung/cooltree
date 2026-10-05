@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PlatformIcon } from "./icons";
 import { links, profile } from "./links";
 
@@ -5,10 +6,10 @@ export default function Home() {
   return (
     <main className="container">
       <header className="profile">
-        <div className="avatar" aria-hidden="true">
-          🌏
+        <div className="banner">
+          <Image src="/banner.jpg" alt={profile.name} width={889} height={690} priority />
         </div>
-        <h1>{profile.name}</h1>
+        <h1 className="sr-only">{profile.name}</h1>
         <p>{profile.bio}</p>
       </header>
 
