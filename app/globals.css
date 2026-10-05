@@ -1,0 +1,161 @@
+:root {
+  --bg-from: #0ea5e9;
+  --bg-to: #6366f1;
+  --card: rgba(255, 255, 255, 0.92);
+  --card-hover: #ffffff;
+  --text: #0f172a;
+  --muted: #475569;
+  --on-bg: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-from: #0c4a6e;
+    --bg-to: #312e81;
+    --card: rgba(15, 23, 42, 0.75);
+    --card-hover: rgba(30, 41, 59, 0.95);
+    --text: #f1f5f9;
+    --muted: #94a3b8;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans Thai", sans-serif;
+  color: var(--text);
+  background: linear-gradient(160deg, var(--bg-from), var(--bg-to));
+  background-attachment: fixed;
+}
+
+.container {
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 56px 16px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.profile {
+  text-align: center;
+  color: var(--on-bg);
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 48px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 3px solid rgba(255, 255, 255, 0.6);
+}
+
+.profile h1 {
+  margin: 0 0 8px;
+  font-size: 1.75rem;
+}
+
+.profile p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 16px;
+  background: var(--card);
+  color: var(--text);
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.link:hover,
+.link:focus-visible {
+  transform: translateY(-2px);
+  background: var(--card-hover);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
+}
+
+.link:focus-visible {
+  outline: 3px solid var(--on-bg);
+  outline-offset: 2px;
+}
+
+.link__icon {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+}
+
+.link--youtube .link__icon {
+  background: #ff0000;
+}
+
+.link--tiktok .link__icon {
+  background: #000;
+  box-shadow: -2px -2px 0 #25f4ee inset, 2px 2px 0 #fe2c55 inset;
+}
+
+.link--facebook .link__icon {
+  background: #1877f2;
+}
+
+.link__text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.link__text strong {
+  font-size: 1.05rem;
+}
+
+.link__text small {
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.link__arrow {
+  color: var(--muted);
+  font-size: 1.2rem;
+}
+
+.footer {
+  text-align: center;
+  color: var(--on-bg);
+  opacity: 0.75;
+  font-size: 0.85rem;
+}
